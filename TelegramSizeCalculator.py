@@ -15,7 +15,7 @@ async def get_total_size():
 
     async with client:
         async for message in client.iter_messages(channel_username):
-            if message.media and isinstance(message.media, MessageMediaDocument):
+            if message.file:
                 total_size += message.media.document.size  # Somma la dimensione del file
                 count += 1
 
